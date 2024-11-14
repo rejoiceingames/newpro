@@ -4,6 +4,24 @@ darkModeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 });
 
+// Typing Effect
+document.addEventListener("DOMContentLoaded", function() {
+    const typingText = document.querySelector(".typing");
+    const text = typingText.textContent;
+    typingText.textContent = "";
+    let index = 0;
+    const speed = 100;
+
+    function type() {
+        if (index < text.length) {
+            typingText.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+});
+
 // Skill Bars Animation
 window.addEventListener("scroll", () => {
     const skillBars = document.querySelectorAll(".skill-bar");
@@ -14,12 +32,4 @@ window.addEventListener("scroll", () => {
             bar.style.width = skillValue;
         }
     });
-});
-
-// Form Submission Alert
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value;
-    alert(`Thank you, ${name}! Your message has been sent.`);
-    document.getElementById("contactForm").reset();
 });
