@@ -1,4 +1,4 @@
-/* Basic Reset */
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,47 +8,63 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-header {
-    text-align: center;
-    padding: 10px;
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
-#about, #projects, #contact {
-    margin: 20px 0;
-}
-
-h1, h2 {
-    color: #4CAF50;
-}
-
-.project-card {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form textarea, form button {
-    margin-bottom: 10px;
-    padding: 8px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+#darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
     padding: 10px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+header, .section {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: background 0.3s;
+}
+
+body.dark-mode header, body.dark-mode .section {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Skill Bar Animation */
+.skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-bar {
+    margin: 10px 0;
+    width: 0;
+    height: 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
+    transition: width 1s;
+}
+
+/* Project Cards */
+.project-card {
+    margin: 10px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
 }
